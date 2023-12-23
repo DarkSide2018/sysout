@@ -5,10 +5,11 @@ import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ru.sysout.model.Report;
 
-@Transactional
+@Transactional(propagation = Propagation.NOT_SUPPORTED)
 @Repository
 public interface ReportRepository extends CrudRepository<Report, Long> {
 
