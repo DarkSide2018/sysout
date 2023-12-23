@@ -14,6 +14,9 @@ public class ReportService {
     @Autowired
     private AddressRepository addressRepository;
 
+    public void magic(){
+        System.out.println("magic");
+    }
     @Transactional
     public void sendReport(long id) {
         addressRepository.addAddress(id, "addr1");
@@ -21,6 +24,6 @@ public class ReportService {
         System.out.println(id + " sent");
         reportRepository.updatePublished(id);
         //исключение заставит транзакцию откатиться:
-        throw new RuntimeException();
+        //throw new RuntimeException();
     }
 }
